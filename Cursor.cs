@@ -6,7 +6,7 @@ namespace Space_Game
 {
     class Cursor
     {
-        public void WriteAt(string s, int x, int y)
+        public static void WriteAt(string s, int x, int y)
         {
             try
             {
@@ -20,8 +20,20 @@ namespace Space_Game
             }
         }
 
+        public static void ClearArea(int x1, int x2, int y1, int y2)
+        {
+            Console.SetCursorPosition(x1, y1);
+            for (int i = x1; i < x2 + 1; i++)
+            {
+                for (int j =y1; j < y2 + 1; j++)
+                {
+                    Cursor.WriteAt(string.Empty,i,j);
+                }
+            }
+        }
 
-        public void WriteLineAt(string s, int range, int x, int y)
+
+        public static void WriteLineAt(string s, int range, int x, int y)
         {
             try
             {
@@ -38,10 +50,11 @@ namespace Space_Game
             }
         }
 
-        public void MoveCharacter()
+        public static void MoveCharacter()
         {
             try
             {
+                Console.CursorVisible = false;
                 switch (Console.ReadKey(false).Key)
                 {
                     case ConsoleKey.UpArrow:

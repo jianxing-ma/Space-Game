@@ -6,51 +6,54 @@ namespace Space_Game
 {
     class Display
     {
+        private static int Sx1 = 9, Sx2 = 150, Sy1 = 4, Sy2 = 35, Sy3 = 41;
 
-        public void UniverseMap()
-        {
-            Cursor cursor = new Cursor();
+        public static void Screen()
+        {          
             Console.BackgroundColor = ConsoleColor.DarkGray;
-            for (int i = 8; i < 151; i++)
+            
+            for (int i = Sx1; i < Sx2+1; i++)
             {
-                cursor.WriteAt(" ", i, 4);
-                cursor.WriteAt(" ", i, 35);
-                cursor.WriteAt(" ", i, 41);
+                Cursor.WriteAt(" ", i, Sy1);
+                Cursor.WriteAt(" ", i, Sy2);
+                Cursor.WriteAt(" ", i, Sy3);
             }
-            for (int j = 4; j < 42; j++)
+            for (int j = Sy1; j < Sy3 + 1; j++)
             {
-                cursor.WriteAt(" ", 8, j);
-                cursor.WriteAt(" ", 150, j);
+                Cursor.WriteAt(" ", Sx1, j);
+                Cursor.WriteAt(" ", Sx2, j);
             }
             Console.ResetColor();
-
+        }
+        public static void UniverseMap()
+        {  
+            // Print random stars as background
             Random rnd = new Random();
-            for (int i = 10; i < 150; i += 5)
+            for (int i = Sx1+1; i < Sx2; i += 5)
             {
-                for (int j = 5; j < 35; j += 5)
+                for (int j = Sy1+1; j < Sy2; j += 5)
                 {
-                    cursor.WriteAt("*", rnd.Next(i, i+5), rnd.Next(j, j+5));
+                    Cursor.WriteAt("*", rnd.Next(i, i+5), rnd.Next(j, j+5));
                 }
             }
 
-            Console.ForegroundColor = ConsoleColor.Blue;
-            cursor.WriteAt("*", 80, 20);           
+            // Print Planets
+            var PlanetLocation = new List<(string color, (int x, int y)coord)> { ("Blue", (80, 20)), ("Red",(40,10)),
+                ("Cyan",(50,28)),("Green",(120,10)),("Magenta",(110,25))}; 
 
-            Console.ForegroundColor = ConsoleColor.Red;
-            cursor.WriteAt("*", 40, 10);
-
-            Console.ForegroundColor = ConsoleColor.Cyan;
-            cursor.WriteAt("*", 50, 28);
-
-            Console.ForegroundColor = ConsoleColor.Green;
-            cursor.WriteAt("*", 120, 10);
-
-            Console.ForegroundColor = ConsoleColor.Magenta;
-            cursor.WriteAt("*", 110, 25);
-
+            foreach (var item in PlanetLocation)
+            {
+                Console.ForegroundColor = (ConsoleColor)Enum.Parse(typeof(ConsoleColor), item.color);
+                Cursor.WriteAt("*", item.coord.x, item.coord.y);
+            }
             Console.ResetColor();
 
-            Console.SetCursorPosition(78, 21);
+            // Print Spaceship
+            Console.SetCursorPosition(81, 20);
+            Console.ForegroundColor = ConsoleColor.White;
+            Console.OutputEncoding = Encoding.Unicode;
+            Console.WriteLine((char)0x25B2);
+            Console.ResetColor();
         }
 
 
