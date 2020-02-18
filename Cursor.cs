@@ -27,7 +27,7 @@ namespace Space_Game
             {
                 for (int j =y1; j < y2 + 1; j++)
                 {
-                    Cursor.WriteAt(string.Empty,i,j);
+                    WriteAt(" ",i,j);
                 }
             }
         }
@@ -80,8 +80,13 @@ namespace Space_Game
                         Console.Write("x");
                         Console.SetCursorPosition(Console.CursorLeft - 1, Console.CursorTop);
                         break;
-
+                    // To be Modified - Jump to the next line
+                    case ConsoleKey.Enter:
+                        Console.Write("\b");
+                        break;
                 }
+                //var xy = Tuple.Create(Console.CursorLeft, Console.CursorTop);
+                //return xy;
             }
             catch (ArgumentOutOfRangeException e)
             {
@@ -89,6 +94,80 @@ namespace Space_Game
             }
         }
 
+        public static void MoveCharacterInMaps(List<(int,int)> Boundaries)
+        {
+            try
+            {
+                //Console.CursorVisible = false;
+                switch (Console.ReadKey(false).Key)
+                {
+                    case ConsoleKey.UpArrow:
+                        if (Boundaries.Contains((Console.CursorLeft, Console.CursorTop - 1)))
+                        {
+                            Console.SetCursorPosition(Console.CursorLeft - 1, Console.CursorTop);
+                            break;
+                        }
+                        else
+                        {
+                            Console.SetCursorPosition(Console.CursorLeft - 1, Console.CursorTop - 1);
+                            Console.Write("x");
+                            Console.SetCursorPosition(Console.CursorLeft - 1, Console.CursorTop);
+                            break;
+                        }
+                    case ConsoleKey.DownArrow:
+                        if (Boundaries.Contains((Console.CursorLeft, Console.CursorTop + 1)))
+                        {
+                            Console.SetCursorPosition(Console.CursorLeft - 1, Console.CursorTop);
+                            break;
+                        }
+                        else
+                        {
+                            Console.SetCursorPosition(Console.CursorLeft - 1, Console.CursorTop + 1);
+                            Console.Write("x");
+                            Console.SetCursorPosition(Console.CursorLeft - 1, Console.CursorTop);
+                            break;
+                        }
+                    case ConsoleKey.LeftArrow:
+                        if (Boundaries.Contains((Console.CursorLeft - 2, Console.CursorTop)))
+                        {
+                            Console.SetCursorPosition(Console.CursorLeft - 1, Console.CursorTop);
+                            break;
+                        }
+                        else 
+                        {
+                            Console.SetCursorPosition(Console.CursorLeft - 2, Console.CursorTop);
+                            Console.Write("x");
+                            Console.SetCursorPosition(Console.CursorLeft - 1, Console.CursorTop);
+                            break; 
+                        }
+                    case ConsoleKey.RightArrow:
+                        if (Boundaries.Contains((Console.CursorLeft + 1, Console.CursorTop)))
+                        {
+                            Console.SetCursorPosition(Console.CursorLeft - 1, Console.CursorTop);
+                            break;
+                        }
+                        else
+                        {
+                            Console.Write("x");
+                            Console.SetCursorPosition(Console.CursorLeft - 1, Console.CursorTop);
+                            break;
+                        }
+                    case ConsoleKey.X:
+                        Console.Write("x");
+                        Console.SetCursorPosition(Console.CursorLeft - 1, Console.CursorTop);
+                        break;
+                    // To be Modified - Jump to the next line
+                    case ConsoleKey.Enter:
+                        Console.Write("\b");
+                        break;
+                }
+                
+            }
+            catch (ArgumentOutOfRangeException e)
+            {
+                Console.Write("\bx");
+            }
+        }
 
 
     }
