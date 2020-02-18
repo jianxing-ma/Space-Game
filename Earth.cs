@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -10,54 +10,105 @@ namespace SpaceAdventure
         public Earth()
         {
             Console.WriteLine("\t\t\t\t\t\tEARTH");
+            Cursor player = new Cursor();
             EarthMap();
+            do
+            {
+                player.MoveCharacter();
+            } while(true);
         }
 
 
         private void EarthMap()
         {
-            char b = '=';
-            char s = '|';
-            char t = 't';
-            char w = 'w';
-            char r = 'r';
-            Console.ForegroundColor = ConsoleColor.Red;
-            Console.SetCursorPosition(41, 4);
-            for (int i = 0; i <= 100; i++)
+
+                char b = ' ';
+                char s = ' ';
+                char t = 't';
+                char w = 'w';
+                char r = 'r';
+            char H = 'H';
+                Console.BackgroundColor = ConsoleColor.Red;
+                Console.SetCursorPosition(41, 4);
+                for (int i = 0; i <= 100; i++)
+                {
+                    Console.Write(b);
+                }
+
+                for (int j = 4; j <= 30; j++)
+                {
+
+                    Console.SetCursorPosition(41, j);
+                    Console.Write(s);
+                }
+
+                for (int a = 4; a <= 30; a++)
+                {
+                    Console.SetCursorPosition(142, a);
+
+                    Console.WriteLine(s);
+                }
+
+                Console.SetCursorPosition(42, 30);
+                for (int j = 0; j <= 99; j++)
+                {
+
+                    Console.Write(b);
+                }
+                Console.ResetColor();
+                //Stats will go here in a different class
+                Console.WriteLine("\n\ndone");
+
+                Trees(t);
+
+                Water(w);
+
+                Dirt(r);
+
+            MissionAndObstacles(H);
+
+               Console.SetCursorPosition(42, 5);
+           // Console.Read();
+        }
+
+        private void MissionAndObstacles(char H)
+        {
+            Console.BackgroundColor = ConsoleColor.Yellow;
+            Console.SetCursorPosition(47, 25);
+            Console.Write(" "); 
+            Console.SetCursorPosition(122, 28);
+            Console.Write(" ");
+            Console.ResetColor();
+
+            Console.ForegroundColor = ConsoleColor.DarkCyan;
+            for (int j = 95; j <= 107; j += 2)
             {
-                Console.Write(b);
+                Console.SetCursorPosition(j, 17);
+                Console.Write(H);
             }
-
-            for (int j = 4; j <= 30; j++)
+            for (int j = 95; j <= 112; j += 2)
             {
-
-                Console.SetCursorPosition(41, j);
-                Console.Write(s);
+                Console.SetCursorPosition(j, 21);
+                Console.Write(H);
             }
-
-            for (int a = 4; a <= 30; a++)
+            for (int j = 17; j <= 21; j ++)
             {
-                Console.SetCursorPosition(142, a);
-
-                Console.WriteLine(s);
+                Console.SetCursorPosition(95, j);
+                Console.Write(H);
             }
-
-            Console.SetCursorPosition(42, 30);
-            for (int j = 0; j <= 99; j++)
+            for (int j = 17; j <= 21; j ++)
             {
-
-                Console.Write(b);
+                Console.SetCursorPosition(113, j);
+                Console.Write(H);
             }
             Console.ResetColor();
 
-            Trees(t);
+            Console.SetCursorPosition(140, 17);
 
-            Water(w);
+            Console.ForegroundColor = ConsoleColor.DarkMagenta;
+            Console.Write("S");
+            Console.ResetColor();
 
-            Dirt(r);
-
-            Console.Read();
-            Console.WriteLine("\ndone");
         }
 
         private static void Dirt(char r)
