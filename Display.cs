@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading;
 
 namespace Space_Game
 {
@@ -25,6 +26,33 @@ namespace Space_Game
             }
             Console.ResetColor();
         }
+
+        public static void ClearMapScreen()
+        {
+            Cursor.ClearArea(Sx1 + 1, Sx2 - 1, Sy1 + 1, Sy2 - 1);
+        }
+        public static void ClearMenuScreen()
+        {
+            Cursor.ClearArea(Sx1 + 1, Sx2 - 1, Sy2 + 1, Sy3 - 1);
+        }
+        public static List<(int, int)> ScreenBoudaries()
+        {
+            List<(int, int)> Boundaries = new List<(int, int)>();
+
+            for (int i = Sx1; i < Sx2 + 1; i++)
+            {
+                Boundaries.Add((i, Sy1));
+                Boundaries.Add((i, Sy2));
+            }
+            for (int i = Sy1; i < Sy2 + 1; i++)
+            {
+                Boundaries.Add((Sx1, i));
+                Boundaries.Add((Sx2, i));
+
+            }
+            return Boundaries;
+        }
+
         public static void UniverseMap()
         {  
             // Print random stars as background
@@ -57,39 +85,32 @@ namespace Space_Game
         }
 
 
+        //public static void SpaceTravelAnime()
+        //{
+        //    ClearMapScreen();
+        //    Random rd = new Random();
+        //    //for 
+        //}
+
         public static void EarthMap()
         {
-            for (int i = Sx1 + 5; i < Sx2 - 5; i++)
-                for (int j = Sy1 + 5; j < Sy1 + 10; j++)
+            for (int i = 20; i < 25; i++)
+            {
+                for (int j = 20; j < 25; j++)
                 {
                     Cursor.WriteAt("#", i, j);
                 }
+            }
         }
-
         public static List<(int,int)> EarthMapBoundaries()
         {
-            List<(int, int)> Boundaries = new List<(int, int)>();
-
-            for (int i = Sx1; i < Sx2 + 1; i++)
+            List<(int, int)> Boundaries = ScreenBoudaries();
+            for (int i = 20; i <25; i++)
             {
-                Boundaries.Add((i, Sy1));
-                Boundaries.Add((i, Sy2));
-            }
-            for (int i = Sy1; i < Sy2 + 1; i++)
-            {
-                Boundaries.Add((Sx1, i));
-                Boundaries.Add((Sx2, i));
-            }
-
-            for (int i = Sx1 + 5; i < Sx2 - 4; i++)
-            {
-                Boundaries.Add((i, Sy1 + 5));
-                Boundaries.Add((i, Sy1 + 9));
-            }
-            for (int j = Sy1 + 5; j < Sy1 + 10; j++)
-            {
-                Boundaries.Add((Sx1 + 6, j));
-                Boundaries.Add((Sx2 -5, j));
+                Boundaries.Add((20, i));
+                Boundaries.Add((24, i));
+                Boundaries.Add((i, 20));
+                Boundaries.Add((i, 24));
             }
             return Boundaries;
         }
