@@ -52,6 +52,7 @@ namespace Space_Game
 
         public static void MoveCharacter(List<(int, int)> Boundaries = default, string s = "x")
         {
+            Boundaries = Boundaries ?? new List<(int, int)>();
             Console.Write(s);
             Console.SetCursorPosition(Console.CursorLeft - 1, Console.CursorTop);
             try
