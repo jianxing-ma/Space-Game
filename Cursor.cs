@@ -94,61 +94,58 @@ namespace Space_Game
             }
         }
 
+
         public static void MoveCharacterInMaps(List<(int,int)> Boundaries)
         {
             try
             {
-                //Console.CursorVisible = false;
-                switch (Console.ReadKey(false).Key)
+                Console.CursorVisible = false;
+                switch (Console.ReadKey(true).Key)
                 {
                     case ConsoleKey.UpArrow:
                         if (Boundaries.Contains((Console.CursorLeft, Console.CursorTop - 1)))
                         {
-                            Console.SetCursorPosition(Console.CursorLeft - 1, Console.CursorTop);
                             break;
                         }
                         else
                         {
-                            Console.SetCursorPosition(Console.CursorLeft - 1, Console.CursorTop - 1);
-                            Console.Write("x");
+                            Console.Write(" ");
+                            WriteAt("x", Console.CursorLeft -1, Console.CursorTop -1);
                             Console.SetCursorPosition(Console.CursorLeft - 1, Console.CursorTop);
                             break;
                         }
                     case ConsoleKey.DownArrow:
-                        if (Boundaries.Contains((Console.CursorLeft, Console.CursorTop + 1)))
-                        {
-                            Console.SetCursorPosition(Console.CursorLeft - 1, Console.CursorTop);
+                        if (Boundaries.Contains((Console.CursorLeft, Console.CursorTop + 1))) 
+                        { 
                             break;
                         }
                         else
                         {
-                            Console.SetCursorPosition(Console.CursorLeft - 1, Console.CursorTop + 1);
-                            Console.Write("x");
+                            Console.Write(" ");
+                            WriteAt("x", Console.CursorLeft - 1, Console.CursorTop + 1);
                             Console.SetCursorPosition(Console.CursorLeft - 1, Console.CursorTop);
                             break;
                         }
                     case ConsoleKey.LeftArrow:
-                        if (Boundaries.Contains((Console.CursorLeft - 2, Console.CursorTop)))
+                        if (Boundaries.Contains((Console.CursorLeft - 1, Console.CursorTop)))
                         {
-                            Console.SetCursorPosition(Console.CursorLeft - 1, Console.CursorTop);
                             break;
                         }
                         else 
                         {
-                            Console.SetCursorPosition(Console.CursorLeft - 2, Console.CursorTop);
-                            Console.Write("x");
                             Console.SetCursorPosition(Console.CursorLeft - 1, Console.CursorTop);
+                            Console.Write("x ");
+                            Console.SetCursorPosition(Console.CursorLeft - 2, Console.CursorTop);
                             break; 
                         }
                     case ConsoleKey.RightArrow:
                         if (Boundaries.Contains((Console.CursorLeft + 1, Console.CursorTop)))
                         {
-                            Console.SetCursorPosition(Console.CursorLeft - 1, Console.CursorTop);
                             break;
                         }
                         else
                         {
-                            Console.Write("x");
+                            Console.Write(" x");
                             Console.SetCursorPosition(Console.CursorLeft - 1, Console.CursorTop);
                             break;
                         }
