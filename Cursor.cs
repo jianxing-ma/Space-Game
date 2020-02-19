@@ -50,53 +50,10 @@ namespace Space_Game
             }
         }
 
-        public static void MoveCharacter()
+        public static void MoveCharacter(List<(int, int)> Boundaries = default, string s = "x")
         {
-            try
-            {
-                Console.CursorVisible = false;
-                switch (Console.ReadKey(false).Key)
-                {
-                    case ConsoleKey.UpArrow:
-                        Console.SetCursorPosition(Console.CursorLeft - 1, Console.CursorTop - 1);
-                        Console.Write("x");
-                        Console.SetCursorPosition(Console.CursorLeft - 1, Console.CursorTop);
-                        break;
-                    case ConsoleKey.DownArrow:
-                        Console.SetCursorPosition(Console.CursorLeft - 1, Console.CursorTop + 1);
-                        Console.Write("x");
-                        Console.SetCursorPosition(Console.CursorLeft - 1, Console.CursorTop);
-                        break;
-                    case ConsoleKey.LeftArrow:
-                        Console.SetCursorPosition(Console.CursorLeft - 2, Console.CursorTop);
-                        Console.Write("x");
-                        Console.SetCursorPosition(Console.CursorLeft - 1, Console.CursorTop);
-                        break;
-                    case ConsoleKey.RightArrow:
-                        Console.Write("x");
-                        Console.SetCursorPosition(Console.CursorLeft - 1, Console.CursorTop);
-                        break;
-                    case ConsoleKey.X:
-                        Console.Write("x");
-                        Console.SetCursorPosition(Console.CursorLeft - 1, Console.CursorTop);
-                        break;
-                    // To be Modified - Jump to the next line
-                    case ConsoleKey.Enter:
-                        Console.Write("\b");
-                        break;
-                }
-                //var xy = Tuple.Create(Console.CursorLeft, Console.CursorTop);
-                //return xy;
-            }
-            catch (ArgumentOutOfRangeException e)
-            {
-                Console.Write("\bx");
-            }
-        }
-
-
-        public static void MoveCharacterInMaps(List<(int,int)> Boundaries)
-        {
+            Console.Write(s);
+            Console.SetCursorPosition(Console.CursorLeft - 1, Console.CursorTop);
             try
             {
                 Console.CursorVisible = false;
@@ -110,7 +67,7 @@ namespace Space_Game
                         else
                         {
                             Console.Write(" ");
-                            WriteAt("x", Console.CursorLeft -1, Console.CursorTop -1);
+                            WriteAt(s, Console.CursorLeft -1, Console.CursorTop -1);
                             Console.SetCursorPosition(Console.CursorLeft - 1, Console.CursorTop);
                             break;
                         }
@@ -122,7 +79,7 @@ namespace Space_Game
                         else
                         {
                             Console.Write(" ");
-                            WriteAt("x", Console.CursorLeft - 1, Console.CursorTop + 1);
+                            WriteAt(s, Console.CursorLeft - 1, Console.CursorTop + 1);
                             Console.SetCursorPosition(Console.CursorLeft - 1, Console.CursorTop);
                             break;
                         }
@@ -134,7 +91,7 @@ namespace Space_Game
                         else 
                         {
                             Console.SetCursorPosition(Console.CursorLeft - 1, Console.CursorTop);
-                            Console.Write("x ");
+                            Console.Write(s + " ");
                             Console.SetCursorPosition(Console.CursorLeft - 2, Console.CursorTop);
                             break; 
                         }
@@ -145,14 +102,10 @@ namespace Space_Game
                         }
                         else
                         {
-                            Console.Write(" x");
+                            Console.Write(" " + s);
                             Console.SetCursorPosition(Console.CursorLeft - 1, Console.CursorTop);
                             break;
                         }
-                    case ConsoleKey.X:
-                        Console.Write("x");
-                        Console.SetCursorPosition(Console.CursorLeft - 1, Console.CursorTop);
-                        break;
                     // To be Modified - Jump to the next line
                     case ConsoleKey.Enter:
                         Console.Write("\b");
@@ -162,10 +115,50 @@ namespace Space_Game
             }
             catch (ArgumentOutOfRangeException e)
             {
-                Console.Write("\bx");
+                Console.Write("\b" + s);
             }
         }
 
+
+
+        //public static void MoveCharacter(string s = "x")
+        //{
+        //    try
+        //    {
+        //        Console.CursorVisible = false;
+        //        switch (Console.ReadKey(false).Key)
+        //        {
+        //            case ConsoleKey.UpArrow:
+        //                WriteAt(s, Console.CursorLeft - 1, Console.CursorTop - 1);
+        //                Console.SetCursorPosition(Console.CursorLeft - 1, Console.CursorTop);
+        //                break;
+        //            case ConsoleKey.DownArrow:
+        //                WriteAt(s, Console.CursorLeft - 1, Console.CursorTop + 1);
+        //                Console.SetCursorPosition(Console.CursorLeft - 1, Console.CursorTop);
+        //                break;
+        //            case ConsoleKey.LeftArrow:
+        //                WriteAt(s, Console.CursorLeft - 2, Console.CursorTop);
+        //                Console.SetCursorPosition(Console.CursorLeft - 1, Console.CursorTop);
+        //                break;
+        //            case ConsoleKey.RightArrow:
+        //                Console.Write(s);
+        //                Console.SetCursorPosition(Console.CursorLeft - 1, Console.CursorTop);
+        //                break;
+        //            case ConsoleKey.X:
+        //                Console.Write(s);
+        //                Console.SetCursorPosition(Console.CursorLeft - 1, Console.CursorTop);
+        //                break;
+        //            // To be Modified - Jump to the next line
+        //            case ConsoleKey.Enter:
+        //                Console.Write("\b");
+        //                break;
+        //        }
+        //    }
+        //    catch (ArgumentOutOfRangeException e)
+        //    {
+        //        Console.Write("\b" + s);
+        //    }
+        //}
 
     }
 }
