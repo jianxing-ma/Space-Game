@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -6,11 +6,20 @@ namespace SpaceAdventure
 {
     public class Vegeta
     {
-        public Vegeta()
+        public static List<(int, int)> vBound = new List<(int, int)>();
+        public Vegeta(int x = 120, int y = 20)
         {
-            Console.WriteLine("\t\t\t\t WELCOME TO VEGETA");
-            VegetaMap();
+            
 
+            Console.Clear();
+
+            Console.WriteLine("\t\t\t\t\t WELCOME TO VEGETA");
+            VegetaMap();
+            Console.SetCursorPosition(x, y);
+            while (true)
+            {
+                Cursor.MoveCharacter(MapBound());
+            }
         }
 
         private void VegetaMap()
@@ -51,7 +60,54 @@ namespace SpaceAdventure
             Water();
 
             MissionObstacles();
-            Console.Read();
+
+        }
+        //private List<(int, int)> MAO()
+        //{
+        //    List<(int, int)> moa = new List<(int, int)>();
+        //    moa.Add((88, 12));
+        //    moa
+        //}
+
+        private List<(int, int)> MapBound()
+        {
+            //Water Boundaries
+            for (int i = 70; i <= 115; i++)
+            {
+                vBound.Add((i, 15));
+                vBound.Add((i, 20));
+            }
+            for (int i = 16; i <= 19; i++)
+            {
+                vBound.Add((70, i));
+                vBound.Add((115, i));
+            }
+            //Grass
+            for (int i = 57; i <= 126; i++)
+            {
+                vBound.Add((i, 9));
+                vBound.Add((i, 25));
+            }
+            for (int i = 9; i <= 25; i++)
+            {
+                vBound.Add((57, i));
+                vBound.Add((126, i));
+            }
+            //Mission and Obstacles
+            for(int i = 68; i <= 118; i += 4)
+            {
+                vBound.Add((i, 13));
+                vBound.Add((i, 22));
+            }
+            for (int i = 15; i<= 21; i +=2)
+            {
+                vBound.Add((68, i));
+                vBound.Add((118, i));
+            }
+            //Space Ship
+            vBound.Add((122, 23));
+
+            return vBound;
         }
 
         private void MissionObstacles()
@@ -66,6 +122,15 @@ namespace SpaceAdventure
 
                 Console.SetCursorPosition(i, 22);
                 Console.Write(hut);
+                if (i == 88 || i == 108)
+                {
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.SetCursorPosition(i, 13);
+                    Console.Write("S");
+                    Console.SetCursorPosition(i, 22);
+                    Console.Write("S");
+                    Console.ForegroundColor = ConsoleColor.DarkCyan;
+                }
             }
             for (int i = 15; i <= 21; i += 2)
             {
@@ -74,6 +139,20 @@ namespace SpaceAdventure
 
                 Console.SetCursorPosition(118, i);
                 Console.Write(hut);
+                if (i == 17)
+                {
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.SetCursorPosition(68, i);
+                    Console.Write("S");
+                    Console.ForegroundColor = ConsoleColor.DarkCyan;
+                }
+                if (i == 21)
+                {
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.SetCursorPosition(118, i);
+                    Console.Write("S");
+                    Console.ForegroundColor = ConsoleColor.DarkCyan;
+                }
             }
             Console.ResetColor();
 
