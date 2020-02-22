@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -159,7 +159,78 @@ namespace SpaceAdventure
                 int y = 21;
                 Vegeta vegeta = new Vegeta(x, y);
             }
-
+        }
+        public static void AlphaM()
+        {
+            if (Console.CursorLeft == 94 && Console.CursorTop == 19)
+            {
+                Console.Clear();
+                Console.Write("You found blah blah blah");
+                Console.Read();
+                Console.Clear();
+                int x = 94;
+                int y = 19;
+                AlphaC alpha = new AlphaC(x, y);
+            }else if (Console.CursorLeft == 76 && Console.CursorTop == 17)
+            {
+                Console.Clear();
+                Console.Write("You enter store at grid (75, 17)");
+                Console.Read();
+                Console.Clear();
+                int x = 76;
+                int y = 17;
+                AlphaC alpha = new AlphaC(x, y);
+            }
+            else if (Console.CursorLeft == 114 && Console.CursorTop == 17)
+            {
+                Console.Clear();
+                Console.Write("You enter store at grid (115, 17)");
+                Console.Read();
+                Console.Clear();
+                int x = 114;
+                int y = 17;
+                AlphaC alpha = new AlphaC(x, y);
+            }
+            else if (Console.CursorLeft == 95 && Console.CursorTop == 14)
+            {
+                Console.Clear();
+                Console.Write("You enter store at grid (95, 13)");
+                Console.Read();
+                Console.Clear();
+                int x = 95;
+                int y = 14;
+                AlphaC alpha = new AlphaC(x, y);
+            }
+            else if (Console.CursorLeft == 95 && Console.CursorTop == 20)
+            {
+                Console.Clear();
+                Console.Write("You enter store at grid (95, 21)");
+                Console.Read();
+                Console.Clear();
+                int x = 95;
+                int y = 20;
+                AlphaC alpha = new AlphaC(x, y);
+            }
+            else if (Console.CursorLeft == 86 && Console.CursorTop == 17)
+            {
+                Console.Clear();
+                Console.Write("You enter store at grid (85, 17)");
+                Console.Read();
+                Console.Clear();
+                int x = 84;
+                int y = 17;
+                AlphaC alpha = new AlphaC(x, y);
+            }
+            else if (Console.CursorLeft == 104 && Console.CursorTop == 17)
+            {
+                Console.Clear();
+                Console.Write("You enter store at grid (105, 17)");
+                Console.Read();
+                Console.Clear();
+                int x = 104;
+                int y = 17;
+                AlphaC alpha = new AlphaC(x, y);
+            }
         }
     }
 }
