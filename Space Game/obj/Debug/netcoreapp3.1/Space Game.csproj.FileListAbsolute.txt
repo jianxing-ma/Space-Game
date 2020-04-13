@@ -31,3 +31,14 @@ C:\Users\james\Desktop\Space Game\Space Game\Space Game\obj\Debug\netcoreapp3.1\
 C:\Users\james\Desktop\Space Game\Space Game\Space Game\obj\Debug\netcoreapp3.1\Space Game.AssemblyInfo.cs
 C:\Users\james\Desktop\Space Game\Space Game\Space Game\obj\Debug\netcoreapp3.1\Space Game.dll
 C:\Users\james\Desktop\Space Game\Space Game\Space Game\obj\Debug\netcoreapp3.1\Space Game.pdb
+C:\Users\james\Desktop\Space-Game\Space Game\bin\Debug\netcoreapp3.1\Space Game.exe
+C:\Users\james\Desktop\Space-Game\Space Game\bin\Debug\netcoreapp3.1\Space Game.deps.json
+C:\Users\james\Desktop\Space-Game\Space Game\bin\Debug\netcoreapp3.1\Space Game.runtimeconfig.json
+C:\Users\james\Desktop\Space-Game\Space Game\bin\Debug\netcoreapp3.1\Space Game.runtimeconfig.dev.json
+C:\Users\james\Desktop\Space-Game\Space Game\bin\Debug\netcoreapp3.1\Space Game.dll
+C:\Users\james\Desktop\Space-Game\Space Game\bin\Debug\netcoreapp3.1\Space Game.pdb
+C:\Users\james\Desktop\Space-Game\Space Game\obj\Debug\netcoreapp3.1\Space Game.csprojAssemblyReference.cache
+C:\Users\james\Desktop\Space-Game\Space Game\obj\Debug\netcoreapp3.1\Space Game.AssemblyInfoInputs.cache
+C:\Users\james\Desktop\Space-Game\Space Game\obj\Debug\netcoreapp3.1\Space Game.AssemblyInfo.cs
+C:\Users\james\Desktop\Space-Game\Space Game\obj\Debug\netcoreapp3.1\Space Game.dll
+C:\Users\james\Desktop\Space-Game\Space Game\obj\Debug\netcoreapp3.1\Space Game.pdb

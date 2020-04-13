@@ -53,7 +53,7 @@ namespace Space_Game
         public static void Intro()
         {
             // Welcome
-            string[] welcome = File.ReadAllLines(@"C:\Users\james\Desktop\Text\Welcome.txt");
+            string[] welcome = File.ReadAllLines(@"Text\Welcome.txt");
             Console.SetCursorPosition(0, 3);
             foreach (string line in welcome)
             {
@@ -67,7 +67,7 @@ namespace Space_Game
 
             // Intro  
             Console.SetCursorPosition(0, 12);
-            string intro = File.ReadAllText(@"C:\Users\james\Desktop\Text\Intro.txt");
+            string intro = File.ReadAllText(@"Text\Intro.txt");
             foreach (char i in intro)
             {                               
                 Console.ForegroundColor = ConsoleColor.DarkMagenta;  //(ConsoleColor)new Random().Next(7, 16)
@@ -78,7 +78,7 @@ namespace Space_Game
             Thread.Sleep(3000);
             ClearMapScreen();
             Console.SetCursorPosition(0, 12);
-            string[] bonus1 = File.ReadAllLines(@"C:\Users\james\Desktop\Text\bonus1.txt");
+            string[] bonus1 = File.ReadAllLines(@"Text\bonus1.txt");
             foreach (string line in bonus1)
             {
                 Console.ForegroundColor = (ConsoleColor)new Random().Next(7, 16);
@@ -89,7 +89,7 @@ namespace Space_Game
             Thread.Sleep(3000);
             ClearMapScreen();
             Console.SetCursorPosition(0, 12);
-            string[] bonus2 = File.ReadAllLines(@"C:\Users\james\Desktop\Text\bonus2.txt");
+            string[] bonus2 = File.ReadAllLines(@"Text\bonus2.txt");
             foreach (string line in bonus2)
             {
                 Console.ForegroundColor = ConsoleColor.White;
@@ -100,7 +100,7 @@ namespace Space_Game
             Thread.Sleep(3000);
             ClearMapScreen();
             Console.SetCursorPosition(0, 12);
-            string[] bonus3 = File.ReadAllLines(@"C:\Users\james\Desktop\Text\bonus3.txt");
+            string[] bonus3 = File.ReadAllLines(@"Text\bonus3.txt");
             foreach (string line in bonus3)
             {
                 Console.ForegroundColor = (ConsoleColor)new Random().Next(7, 16);

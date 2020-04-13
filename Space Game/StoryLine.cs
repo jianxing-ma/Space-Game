@@ -20,8 +20,8 @@ namespace Space_Game
         {
             Console.SetWindowSize(140, 40);
 
-            string statpath = @"C:\Users\james\Desktop\Stat\Stat.txt";
-            string stagepath = @"C:\Users\james\Desktop\Stat\Stage.txt";
+            string statpath = @"Stat\Stat.txt";
+            string stagepath = @"Stat\Stage.txt";
             List<double> stat = File.ReadAllLines(statpath).ToList().ConvertAll(double.Parse);
             int Stage = int.Parse(File.ReadAllText(stagepath));
             int defaultstage = 0;
@@ -77,7 +77,7 @@ namespace Space_Game
                         break;
                     case 1:
                         Display.ClearMapScreen();
-                        Planet earth = new Planet(@"C:\Users\james\Desktop\Map\Earth.txt", stat);
+                        Planet earth = new Planet(@"Map\Earth.txt", stat);
                         earth.Run(Stage);
                         currentplanet = Stage - 1;
                         Stage = 0;                       
@@ -85,28 +85,28 @@ namespace Space_Game
 
                     case 2:
                         Display.ClearMapScreen();
-                        Planet planet2 = new Planet(@"C:\Users\james\Desktop\Map\Centauri.txt", stat);
+                        Planet planet2 = new Planet(@"Map\Centauri.txt", stat);
                         planet2.Run(Stage);
                         currentplanet = Stage - 1;
                         Stage = 0;
                         break;
                     case 3:
                         Display.ClearMapScreen();
-                        Planet yinyang = new Planet(@"C:\Users\james\Desktop\Map\Yinyang.txt", stat);
+                        Planet yinyang = new Planet(@"Map\Yinyang.txt", stat);
                         yinyang.Run(Stage);
                         currentplanet = Stage - 1;
                         Stage = 0;
                         break;
                     case 4:
                         Display.ClearMapScreen();
-                        Planet jibber = new Planet(@"C:\Users\james\Desktop\Map\Jibber.txt", stat);
+                        Planet jibber = new Planet(@"Map\Jibber.txt", stat);
                         jibber.Run(Stage);
                         currentplanet = Stage - 1;
                         Stage = 0;
                         break;
                     case 5:
                         Display.ClearMapScreen();
-                        Planet vegita = new Planet(@"C:\Users\james\Desktop\Map\Vegita.txt", stat);
+                        Planet vegita = new Planet(@"Map\Vegita.txt", stat);
                         vegita.Run(Stage);
                         currentplanet = Stage - 1;
                         Stage = 0;
@@ -119,7 +119,7 @@ namespace Space_Game
 
             if (stat[0] >= 65)
             {
-                Display.ScreenArt(@"C:\Users\james\Desktop\Text\OutOfTime.txt", ConsoleColor.Red);
+                Display.ScreenArt(@"Text\OutOfTime.txt", ConsoleColor.Red);
                 Cursor.WriteAt("TRY HARDER NEXT TIME", 55, 20, ConsoleColor.Green);
 
                 File.WriteAllText(stagepath, defaultstage.ToString());
@@ -128,7 +128,7 @@ namespace Space_Game
             }
             else if (stat[1] <= 0)
             {
-                Display.ScreenArt(@"C:\Users\james\Desktop\Text\OutOfMoney.txt", ConsoleColor.Red);
+                Display.ScreenArt(@"Text\OutOfMoney.txt", ConsoleColor.Red);
                 Cursor.WriteAt("TRY HARDER NEXT TIME", 55, 20, ConsoleColor.Green);
 
                 File.WriteAllText(stagepath, defaultstage.ToString());
@@ -137,7 +137,7 @@ namespace Space_Game
             }
             else if (stat[1] >= Math.Pow(10, 5))
             {
-                Display.ScreenArt(@"C:\Users\james\Desktop\Text\Congratulations.txt");
+                Display.ScreenArt(@"Text\Congratulations.txt");
                 Cursor.WriteAt("You traveled back in time", 53, 20, ConsoleColor.Green);
                 Cursor.WriteAt("Julia was saved", 58, 21, ConsoleColor.Green);
 

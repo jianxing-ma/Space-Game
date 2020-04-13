@@ -88,7 +88,7 @@ namespace Space_Game
         //______________________________________________________GOLD_____________________________________________________________
         public static void Gold(List<double> stat)
         {
-            Cursor.WriteTextAt(@"C:\Users\james\Desktop\Text\Gold.txt", 10, 10, ConsoleColor.Yellow);
+            Cursor.WriteTextAt(@"Text\Gold.txt", 10, 10, ConsoleColor.Yellow);
             int gold = new Random().Next(50,500);
             stat[1] += gold;
             Console.WriteLine($"\n\n\t\t\t\t\t\t\tYou gained {gold}!");
@@ -100,7 +100,7 @@ namespace Space_Game
         //______________________________________________________BANDITS__________________________________________________________
         public static void Bandits(List<double> stat)
         {
-            Display.ScreenArt(@"C:\Users\james\Desktop\Text\Bandits.txt", ConsoleColor.Red);
+            Display.ScreenArt(@"Text\Bandits.txt", ConsoleColor.Red);
             int money = new Random().Next(50, 500);
             stat[1] -= money;
             Console.WriteLine($"\n\t\t\t\t\t\t\tYou lost {money}!");
@@ -113,11 +113,11 @@ namespace Space_Game
 
         public static List<string> MazeList = new List<string>() 
         {
-            @"C:\Users\james\Desktop\Text\Maze1.txt",
-            @"C:\Users\james\Desktop\Text\Maze2.txt",
-            @"C:\Users\james\Desktop\Text\Maze3.txt",
-            @"C:\Users\james\Desktop\Text\Maze4.txt",
-            @"C:\Users\james\Desktop\Text\Maze5.txt",
+            @"Text\Maze1.txt",
+            @"Text\Maze2.txt",
+            @"Text\Maze3.txt",
+            @"Text\Maze4.txt",
+            @"Text\Maze5.txt",
         };
         public static void Maze(int stage) // Set up a list of strings of mappath, use in stage as parameter 
         {
@@ -130,7 +130,7 @@ namespace Space_Game
                 terrain.Add(new List<(int, int)>());
             }
             
-            Cursor.WriteTextAt(@"C:\Users\james\Desktop\Text\MazeEnter.txt", 0, 2, ConsoleColor.Red);
+            Cursor.WriteTextAt(@"Text\MazeEnter.txt", 0, 2, ConsoleColor.Red);
             Thread.Sleep(2000);
             Display.ClearMapScreen();
             
@@ -146,7 +146,7 @@ namespace Space_Game
             } while (true);
 
             Display.ClearMapScreen();
-            Cursor.WriteTextAt(@"C:\Users\james\Desktop\Text\MazeExit.txt", 0, 2, ConsoleColor.Green);
+            Cursor.WriteTextAt(@"Text\MazeExit.txt", 0, 2, ConsoleColor.Green);
             Thread.Sleep(2000);
         }
 
@@ -156,11 +156,11 @@ namespace Space_Game
 
         public static List<string> NinjaList = new List<string>()
         {
-            @"C:\Users\james\Desktop\Text\Ninja1.txt",
-            @"C:\Users\james\Desktop\Text\Ninja2.txt",
-            @"C:\Users\james\Desktop\Text\Maze3.txt",
-            @"C:\Users\james\Desktop\Text\Maze4.txt",
-            @"C:\Users\james\Desktop\Text\Maze5.txt",
+            @"Text\Ninja1.txt",
+            @"Text\Ninja2.txt",
+            @"Text\Maze3.txt",
+            @"Text\Maze4.txt",
+            @"Text\Maze5.txt",
         };
 
         public static void Ninja(int stage)

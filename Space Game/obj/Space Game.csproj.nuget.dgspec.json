@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\james\\Desktop\\Space Game\\Space Game\\Space Game\\Space Game.csproj": {}
+    "C:\\Users\\james\\Desktop\\Space-Game\\Space Game\\Space Game.csproj": {}
   },
   "projects": {
-    "C:\\Users\\james\\Desktop\\Space Game\\Space Game\\Space Game\\Space Game.csproj": {
+    "C:\\Users\\james\\Desktop\\Space-Game\\Space Game\\Space Game.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\james\\Desktop\\Space Game\\Space Game\\Space Game\\Space Game.csproj",
+        "projectUniqueName": "C:\\Users\\james\\Desktop\\Space-Game\\Space Game\\Space Game.csproj",
         "projectName": "Space Game",
-        "projectPath": "C:\\Users\\james\\Desktop\\Space Game\\Space Game\\Space Game\\Space Game.csproj",
+        "projectPath": "C:\\Users\\james\\Desktop\\Space-Game\\Space Game\\Space Game.csproj",
         "packagesPath": "C:\\Users\\james\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\james\\Desktop\\Space Game\\Space Game\\Space Game\\obj\\",
+        "outputPath": "C:\\Users\\james\\Desktop\\Space-Game\\Space Game\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\james\\AppData\\Roaming\\NuGet\\NuGet.Config",

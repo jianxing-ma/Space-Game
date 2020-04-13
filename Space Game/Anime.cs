@@ -13,18 +13,18 @@ namespace Space_Game
             int alignx = 50; int aligny = 25;
             Console.SetWindowSize(140, 40);
             Console.CursorVisible = false;
-            Cursor.WriteTextAt(@"C:\Users\james\Desktop\Text\SpaceshipAnimeStart.txt", alignx, 10, ConsoleColor.Red);
+            Cursor.WriteTextAt(@"Text\SpaceshipAnimeStart.txt", alignx, 10, ConsoleColor.Red);
             Thread.Sleep(1500);
             Console.Clear();
-            Cursor.WriteTextAt(@"C:\Users\james\Desktop\Text\SpaceshipAnimeBase.txt", alignx, aligny, ConsoleColor.DarkCyan);
+            Cursor.WriteTextAt(@"Text\SpaceshipAnimeBase.txt", alignx, aligny, ConsoleColor.DarkCyan);
             for (int i = aligny + 5; i > 0; i--)
             {
-                Cursor.WriteTextAt(@"C:\Users\james\Desktop\Text\SpaceshipAnime.txt", alignx, i, ConsoleColor.White);
+                Cursor.WriteTextAt(@"Text\SpaceshipAnime.txt", alignx, i, ConsoleColor.White);
                 Thread.Sleep(timer);
                 Cursor.ClearArea(alignx + 18, alignx + 23, i, i + 8);
             }
             Console.Clear();
-            Cursor.WriteTextAt(@"C:\Users\james\Desktop\Text\SpaceshipAnimeLanding.txt", alignx - 10, 10, ConsoleColor.DarkGreen);
+            Cursor.WriteTextAt(@"Text\SpaceshipAnimeLanding.txt", alignx - 10, 10, ConsoleColor.DarkGreen);
             Thread.Sleep(2000);
         }
 
